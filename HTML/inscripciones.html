@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripciones - Página Interactiva</title>
+    <link rel="stylesheet" href="/WebVale/css/inscripciones.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Formulario de Inscripción</h1>
+            <p>Únete a nuestra comunidad con solo unos pocos pasos.</p>
+        </div>
+    </header>
+
+    <section class="registration-section">
+        <div class="registration-container">
+            <form id="registrationForm" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="firstName" class="neon-label">Nombre Completo:</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Ingresa tu nombre completo" required>
+                    <small id="nameError" class="error-message">El nombre completo es obligatorio.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="neon-label">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+                    <small id="emailError" class="error-message">Ingresa un correo electrónico válido.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="neon-label">Número de Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ingresa tu número de teléfono" required>
+                    <small id="phoneError" class="error-message">El número de teléfono es obligatorio.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="neon-label">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa una contraseña" required>
+                    <small id="passwordError" class="error-message">La contraseña debe tener al menos 6 caracteres.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword" class="neon-label">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirma tu contraseña" required>
+                    <small id="confirmPasswordError" class="error-message">Las contraseñas no coinciden.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="terms" class="neon-label">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        Acepto los <a href="javascript:void(0)" onclick="openModal()">términos y condiciones</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-button">Carrito de Preinscripción</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Términos y Condiciones</h2>
+            <p>Por favor, lee cuidadosamente los siguientes términos y condiciones antes de proceder con tu inscripción:</p>
+            <ul>
+                <li>1. Todos los usuarios deben tener más de 18 años para registrarse.</li>
+                <li>2. Los datos proporcionados en el formulario de inscripción deben ser verídicos.</li>
+                <li>3. El usuario es responsable de mantener la confidencialidad de su contraseña.</li>
+                <li>4. El acceso al servicio está sujeto a cambios y actualizaciones sin previo aviso.</li>
+                <li>5. Al aceptar estos términos, el usuario autoriza el uso de sus datos con fines de comunicación y marketing.</li>
+                <li>6. Este servicio se ofrece "tal cual", sin garantías de disponibilidad o fiabilidad.</li>
+            </ul>
+            <button class="accept-btn" onclick="acceptTerms()">Aceptar Términos</button>
+        </div>
+    </div>
+
+    <a href="index.html">
+        <button class="back-to-top">Volver al Inicio</button>
+    </a>
+</section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/WebVale/js/inscripciones.js"></script>
+</body>
+</html>
